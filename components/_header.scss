@@ -1,0 +1,83 @@
+header {
+    background: $grey-clr-300; 
+    .container {
+        @include flex-r-c-b(); 
+        padding: .8em 15px; 
+    }
+    .navigate {
+        @include flex-r-c-c(1.3); 
+        @media (max-width: 992px) {
+            display: none;
+        }
+        .search {
+            @include flex-r-c-c(0); 
+            padding: 0 .7em; 
+            width: 300px; 
+            @include dark-hole(1); 
+            input {
+                outline: none; 
+                padding: .8em; 
+                background: transparent; 
+                color: $white; 
+                width: 100%; 
+            }
+            i,
+            input::placeholder {
+                color: $grey-clr-100; 
+            }
+        }
+        nav { 
+            @include flex-r-c-c(0); 
+            a {
+                padding: .5em 1em;  
+                @include nav-elements-hover(); 
+            }
+        }
+    }
+    .profile {
+        @include flex-r-c-c(1.4);
+        @media (max-width: 992px) {
+            flex: 1; 
+        } 
+        i {
+            font-size: 1.7rem;
+            cursor: pointer; 
+            @include nav-elements-hover(); 
+        }
+        i.mobile-search {
+            @media (min-width: 992px) {
+                display: none; 
+            }
+        }
+        i.more {
+            position: relative; 
+            top: -3px; 
+            @media (max-width: 992px) {
+                display: none;
+            }
+        }
+        i.mobile-menu {
+            @media (min-width: 992px) {
+                display: none;
+            }
+        }
+        a.teacher-profile {
+            @include flex-r-c-c(.5); 
+            @include nav-elements-hover();
+            flex-wrap: wrap; 
+            @media (max-width: 992px) {
+                order: -2;
+                margin-right: auto;
+            }
+            img {
+                width: 35px; 
+                border-radius: 50%; 
+            } 
+            p {
+                @media (min-width: 992px) {
+                    display: none; 
+                }
+            }
+        }
+    }
+}

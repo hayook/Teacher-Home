@@ -1,0 +1,142 @@
+.cell {
+    padding: 0 15px; 
+    @include flex-r-c-c(0); 
+    height: 60px;
+    background: $blue-clr-300; 
+    border-radius: $border-r-2;
+    border: 1px solid $grey-clr-200; 
+}
+
+.schedule {
+    .container {
+        margin-top: .7em;
+        margin-bottom: .7em;
+        background: $blue-clr-300; 
+        padding: .8em 15px; 
+    }
+    ul.filter {
+        @include flex-r-c-c(1); 
+        justify-content: space-evenly; 
+        @media (max-width: 768px) {
+            flex-direction: column; 
+            li {
+                width: 100%; 
+            }
+        }
+        background: $grey-clr-300; 
+        position: relative;
+        margin-bottom: 2em;
+        li {
+            text-align: center;
+            padding: 1em 2em 1em .7em; 
+            position: relative; 
+            transition: var(--main-transition);
+            cursor: pointer; 
+            @include nav-elements-hover();  
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            font-size: 1.4em;
+            cursor: pointer;
+            &:hover {
+                transition: $transition-4;
+                color: $grey-clr-100;
+            }
+            @media (max-width: 768px) {
+                display: none;
+            } 
+        }
+    }
+    .schedule-tab {
+        background: $blue-clr-400; 
+        border: 1px solid $grey-clr-200;
+        border-radius: $border-r-2;
+        padding: 5px;
+        @include main-grid(10); 
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 60px auto;
+        .days { 
+            height: 340px;
+            @include main-grid(10); 
+            grid-row-start: 2; 
+        }
+        .overflower {
+            grid-column-start: 2; 
+            grid-row: span 2;
+            @media (max-width: 1199px) {
+                overflow-x: scroll;
+            }
+            .schedule-container {
+                @include main-grid(10); 
+                width: 1026.45px;
+                grid-template-rows: 60px auto;
+                .hours {
+                    @include main-grid(10); 
+                    grid-template-columns: repeat(8, 1fr);  
+                }
+                .sessions {
+                    @include main-grid(10); 
+                    grid-template-columns: repeat(8, 1fr);
+                    .cell {
+                        cursor: pointer;
+                        position: relative; 
+                        &::before {
+                            content: '';
+                            opacity: 0; 
+                            width: 100%; 
+                            height: 100%; 
+                            background: rgba(#000, .8); 
+                            position: absolute;
+                            left: 0; 
+                            top: 0; 
+                            transition: $transition-4;
+                        }
+                        &:hover::before {
+                            opacity: 1;
+                        }
+                        &:hover {
+                            .functionalities {
+                                a {
+                                    opacity: 1;
+                                    transform: scale(1);
+                                }
+                            }
+                        }
+                        .functionalities {
+                            @include flex-r-c-c(0);  
+                            justify-content: space-evenly; 
+                            width: 80%; 
+                            position: absolute;
+                            a {
+                                display: block;
+                                opacity: 0; 
+                                padding: 5px; 
+                                border-radius: 4px;
+                                transform: scale(0);
+                                transition: $transition-4;
+                                &:hover { 
+                                    transform: scale(1.2);
+                                }
+                                i {
+                                    position: relative;
+                                    top: 1px; 
+                                }
+                            }
+                            @each $functionality, $back-color, $hover-color in $functionalities {
+                                a.#{$functionality} {
+                                    background: $back-color;
+                                    &:hover {
+                                        background: $hover-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

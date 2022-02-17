@@ -1,0 +1,48 @@
+@mixin flex-r-c-b() {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+
+}
+@mixin flex-r-c-c($col-gap) {
+    @include flex-r-c-b();
+    justify-content: center;
+    gap: #{$col-gap}em;
+}
+
+@mixin flex-c-c-c($col) {
+    @include flex-r-c-c($col);
+    flex-direction: column;
+}
+
+@mixin dark-hole($lightness) {
+    background: if($lightness == 1, $blue-clr-300, $blue-clr-400); 
+    border: 1px solid $border-color;
+    border-radius: $border-r-2;
+}
+
+@mixin nav-elements-hover() {
+    &:hover {
+        transition: $transition-4;
+        color: $grey-clr-100;
+        transform: scale(1.05);
+    
+    }
+}
+
+@mixin main-btn($back-color, $hover-color) {
+    padding: .6em 2em; 
+    background: $back-color; 
+    border-radius: $border-r-1;
+    text-align: center;
+
+    &:hover {
+        transition: $transition-4; 
+        background: $hover-color; 
+    }
+}
+
+@mixin main-grid($gap) {
+    display: grid; 
+    gap: #{$gap}px; 
+}
