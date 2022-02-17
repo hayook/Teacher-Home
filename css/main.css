@@ -269,7 +269,7 @@ header .drop-down-menu ul li.teacher-profile a img {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -70%;
+    right: -100%;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
