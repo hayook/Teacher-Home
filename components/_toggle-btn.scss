@@ -1,0 +1,27 @@
+.toggle-theme {
+    background: $grey-clr-200;
+    $holder-height: 15px; 
+    $holder-width: 25px;
+    height: $holder-height;
+    width: $holder-width;
+    border-radius: 50px;
+    position: relative; 
+    cursor: pointer;
+    &::before, &.switched::before {
+        content: '';
+        width: $holder-height; 
+        height: $holder-height;
+        background: $grey-clr-100; 
+        position: absolute; 
+        top: 0; 
+        left: 0;
+        border-radius: 50%;
+        transition: transform $transition-4;
+    }
+    &.switched {
+        background: $green-clr-100; 
+    }
+    &.switched::before {
+        transform: translateX(calc(#{$holder-width} - #{$holder-height}));
+    }
+}

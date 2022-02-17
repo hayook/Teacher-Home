@@ -1,8 +1,11 @@
-// Colors Palette
-@import '../components/colors'; 
+// Root 
+@import '../components/root'; 
 
 // Vars
 @import '../components/vars'; 
+
+// Colors Palette
+@import '../components/colors'; 
 
 // Mixins
 @import '../components/mixins'; 
@@ -10,6 +13,8 @@
 /* Start Global Rules*/ 
 @import '../components/glabal'; 
 /* End Global Rules */
+
+@import '../components/overlay';
 
 /* Start Header */
 @import '../components/header'; 

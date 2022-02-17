@@ -1,10 +1,12 @@
+$cell-border-radius: $border-r-2;
+
 .cell {
     padding: 0 15px; 
     @include flex-r-c-c(0); 
     height: 60px;
     background: $blue-clr-300; 
-    border-radius: $border-r-2;
-    border: 1px solid $grey-clr-200; 
+    border-radius: $cell-border-radius; 
+    border: 1px solid $grey-clr-200;
 }
 
 .schedule {
@@ -93,6 +95,7 @@
                             left: 0; 
                             top: 0; 
                             transition: $transition-4;
+                            border-radius: $cell-border-radius;
                         }
                         &:hover::before {
                             opacity: 1;

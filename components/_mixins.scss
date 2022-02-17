@@ -22,11 +22,12 @@
 }
 
 @mixin nav-elements-hover() {
-    &:hover {
-        transition: $transition-4;
-        color: $grey-clr-100;
-        transform: scale(1.05);
-    
+    @media (min-width: 768px) {
+        &:hover {
+            transition: $transition-4;
+            color: $grey-clr-100;
+            transform: scale(1.05);
+        }
     }
 }
 
