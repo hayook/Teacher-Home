@@ -13,6 +13,7 @@ for (let i = 0; i < 40; i++) {
 
     let startBtn = document.createElement('a'); 
     startBtn.className = 'start'; 
+    startBtn.id = 'startSessionBtn'; 
     startBtn.href = '#'; 
     startIcon = document.createElement('i'); 
     startIcon.className = 'fas fa-play'; 
@@ -111,6 +112,39 @@ toggleBtn.addEventListener('click', function () {
     document.querySelector('.overlay').classList.toggle('show');
     document.querySelector('body').classList.toggle('disable-scrolling');   
     menuToggled = !menuToggled; 
-});
+}); 
 
 // =============================================================================================================
+
+const startSessionBtn = document.querySelectorAll('#startSessionBtn'); 
+const startSessionPopup = document.querySelector('#startSessionPopup');
+const startSessionClose = document.querySelector('#startSessionPopup button');
+
+startSessionBtn.forEach(btn => {
+    btn.addEventListener('click', function () {
+        openPopup(startSessionPopup); 
+        document.querySelector('.overlay').classList.add('active'); 
+    });
+})
+
+startSessionClose.addEventListener('click', function () {
+    closePopup(startSessionPopup);
+    document.querySelector('.overlay').classList.remove('active'); 
+})
+
+document.querySelector('.overlay').addEventListener('click', function () {
+    closePopup(startSessionPopup); // here its gonna take the opned model so i can apply this even on the toggle menu with just one function so its gonna take as a parametre the menu and it will close just the open modal
+    this.classList.remove('active'); 
+})
+
+function openPopup(popup) {
+    popup.classList.add('pop'); 
+}
+
+function closePopup(popup) {
+    popup.classList.remove('pop');
+}
+
+
+
+// With WDS Video instade of a code for every pop i can write one code for all the popups using data attributes
