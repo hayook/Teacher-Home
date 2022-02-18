@@ -4,14 +4,14 @@
     justify-content: space-between; 
 
 }
-@mixin flex-r-c-c($col-gap) {
+@mixin flex-r-c-c($col-gap: 0) {
     @include flex-r-c-b();
     justify-content: center;
     gap: #{$col-gap}em;
 }
 
-@mixin flex-c-c-c($col) {
-    @include flex-r-c-c($col);
+@mixin flex-c-c-c($col-gap: 0) {
+    @include flex-r-c-c($col-gap);
     flex-direction: column;
 }
 
@@ -37,13 +37,21 @@
     border-radius: $border-r-1;
     text-align: center;
 
-    &:hover {
-        transition: $transition-4; 
-        background: $hover-color; 
+    @media (min-width: 768px) {
+        &:hover {
+            transition: $transition-4; 
+            background: $hover-color; 
+        }
     }
 }
 
-@mixin main-grid($gap) {
+@mixin main-grid($gap: 0) {
     display: grid; 
     gap: #{$gap}px; 
+}
+
+@mixin reset-text() {
+    width: fit-content; 
+    text-align: center;
+    white-space: nowrap;
 }

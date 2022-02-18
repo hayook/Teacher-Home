@@ -20,21 +20,4 @@ body.disable-scrolling {
     overflow: hidden;
 }
 
-$screens: (768px 750px), (992px 992px), (1200px 1200px); 
-
-.container {
-    padding: 0 15px;
-    margin: 0 auto;
-
-    @each $screenSize, $containerSize in $screens {
-        @media (min-width: $screenSize) {
-            width: $containerSize; 
-        }
-    }
-}
-
-h1, h2, h3, h4, h5, h6, p {
-    width: fit-content; 
-    text-align: center;
-    white-space: nowrap;
-}
+@import '../utilities/classes'; 

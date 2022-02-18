@@ -45,15 +45,8 @@ body.disable-scrolling {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  text-align: center;
-  white-space: nowrap;
-}
-
 /* End Global Rules */
+/* Start Overlay */
 .overlay {
   display: none;
   position: fixed;
@@ -75,6 +68,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: block;
 }
 
+/* End Overlay */
 /* Start Header */
 header {
   background: #161b22;
@@ -154,8 +148,8 @@ header .drop-down-menu ul li a {
 
 @media (min-width: 768px) {
   header .drop-down-menu ul li a {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
   }
   header .drop-down-menu ul li a:hover {
     background: #1e70eb;
@@ -196,8 +190,8 @@ header .drop-down-menu ul li.switch-theme {
 
 @media (min-width: 768px) {
   header .drop-down-menu ul li.switch-theme {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
   }
   header .drop-down-menu ul li.switch-theme:hover {
     background: #1e70eb;
@@ -207,8 +201,8 @@ header .drop-down-menu ul li.switch-theme {
     font-weight: bold;
   }
   header .drop-down-menu ul li.switch-theme:hover .toggle-theme {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
     background: #000;
   }
 }
@@ -248,10 +242,10 @@ header .drop-down-menu ul li.switch-theme .toggle-theme::before, header .drop-do
   top: 0;
   left: 0;
   border-radius: 50%;
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
 }
 
 header .drop-down-menu ul li.switch-theme .toggle-theme.switched {
@@ -286,8 +280,8 @@ header .drop-down-menu ul li.teacher-profile a img {
         -ms-flex-align: start;
             align-items: flex-start;
     max-width: 80%;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
     padding-top: 3.7em;
   }
   header .drop-down-menu.show {
@@ -404,8 +398,8 @@ header .navigate nav a {
 
 @media (min-width: 768px) {
   header .navigate nav a:hover {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
     color: #8a939e;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -449,8 +443,8 @@ header .profile i {
 
 @media (min-width: 768px) {
   header .profile i:hover {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
     color: #8a939e;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -561,8 +555,8 @@ header .profile a.teacher-profile {
 
 @media (min-width: 768px) {
   header .profile a.teacher-profile:hover {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
     color: #8a939e;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -717,10 +711,12 @@ header .profile a.teacher-profile img {
   text-align: center;
 }
 
-.next-session .next-session-info .session .functionalities a.start-btn:hover {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  background: #49a75a;
+@media (min-width: 768px) {
+  .next-session .next-session-info .session .functionalities a.start-btn:hover {
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    background: #49a75a;
+  }
 }
 
 .next-session .next-session-info .session .functionalities a.edit-btn {
@@ -730,10 +726,12 @@ header .profile a.teacher-profile img {
   text-align: center;
 }
 
-.next-session .next-session-info .session .functionalities a.edit-btn:hover {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  background: #e9795d;
+@media (min-width: 768px) {
+  .next-session .next-session-info .session .functionalities a.edit-btn:hover {
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    background: #e9795d;
+  }
 }
 
 .next-session .next-session-info .session .functionalities a.remove-btn {
@@ -743,10 +741,12 @@ header .profile a.teacher-profile img {
   text-align: center;
 }
 
-.next-session .next-session-info .session .functionalities a.remove-btn:hover {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  background: #ff1f1f;
+@media (min-width: 768px) {
+  .next-session .next-session-info .session .functionalities a.remove-btn:hover {
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    background: #ff1f1f;
+  }
 }
 
 /* End Next Session Section */
@@ -824,8 +824,8 @@ header .profile a.teacher-profile img {
 
 @media (min-width: 768px) {
   .schedule ul.filter li:hover {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
     color: #8a939e;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -843,8 +843,8 @@ header .profile a.teacher-profile img {
 }
 
 .schedule ul.filter i:hover {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
   color: #8a939e;
 }
 
@@ -928,8 +928,8 @@ header .profile a.teacher-profile img {
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
   border-radius: 6px;
 }
 
@@ -971,8 +971,8 @@ header .profile a.teacher-profile img {
   border-radius: 4px;
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a:hover {
@@ -1010,6 +1010,7 @@ header .profile a.teacher-profile img {
 }
 
 /* End Schedule Section */
+/* Start Start Popup */
 .start-section {
   position: fixed;
   top: 50%;
@@ -1059,4 +1060,6 @@ header .profile a.teacher-profile img {
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
 }
+
+/* End Start Popup */
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,12 @@
+// Every thing i can do it with classes i can do it with mixins so i'll use mixins instade but if i have the element in the html and the class is in different places like the contaier i'll use utility classes and because i have the same class in different elements in the html i'll use @import in the main.scss not @extend in a selector because i dont need to groupe them since the element has the class 
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+
+    @each $screenSize, $containerSize in $screens {
+        @media (min-width: $screenSize) {
+            width: $containerSize; 
+        }
+    }
+}

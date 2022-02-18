@@ -1,31 +1,35 @@
-// Root 
-@import '../components/root'; 
-
 // Vars
-@import '../components/vars'; 
+@import '../sass/abstacts/vars'; 
 
 // Colors Palette
-@import '../components/colors'; 
+@import '../sass/abstacts/colors'; 
+
+// Root 
+@import '../sass/base/root'; 
 
 // Mixins
-@import '../components/mixins'; 
+@import '../sass/utilities/mixins'; 
 
 /* Start Global Rules*/ 
-@import '../components/glabal'; 
+@import '../sass/base/glabal'; 
 /* End Global Rules */
 
-@import '../components/overlay';
+/* Start Overlay */
+@import '../sass/componenets/overlay';
+/* End Overlay */
 
 /* Start Header */
-@import '../components/header'; 
+@import '../sass/sections/header'; 
 /* End Header */
 
 /* Start Next Session Section */
-@import '../components/next-session'; 
+@import '../sass/sections/next-session'; 
 /* End Next Session Section */
 
 /* Start Schedule Section */
-@import '../components/schedule'; 
+@import '../sass/sections/schedule'; 
 /* End Schedule Section */
 
-@import '../components/start-popup'; 
+/* Start Start Popup */
+@import '../sass/sections/start-popup'; 
+/* End Start Popup */
