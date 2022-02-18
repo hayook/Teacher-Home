@@ -101,24 +101,16 @@ searchBtn.addEventListener('click', function () {
 
 // =============================================================================================================
 
-const toggleBtn = document.querySelector('i.mobile-menu'); 
+const toggleBtn = document.querySelector('div.menu'); 
 const toggleMenu = document.querySelector('#drop-down-menu');
-const closeMenu = document.querySelector('i.close');
 let menuToggled = false; 
 
 toggleBtn.addEventListener('click', function () {
-    if (!menuToggled) {
-        toggleMenu.classList.add('show');
-        document.querySelector('.overlay').classList.add('show');
-    } else {
-        toggleMenu.classList.remove('show');
-        document.querySelector('.overlay').classList.remove('show')
-    }
+    toggleBtn.classList.toggle('active');
+    toggleMenu.classList.toggle('show');
+    document.querySelector('.overlay').classList.toggle('show');
+    document.querySelector('body').classList.toggle('disable-scrolling');   
     menuToggled = !menuToggled; 
 });
 
-closeMenu.addEventListener('click', function () {
-    if (menuToggled === true) {
-        toggleBtn.click();
-    }
-})
+// =============================================================================================================

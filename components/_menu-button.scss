@@ -1,0 +1,43 @@
+.menu {
+    height: 1em;
+    width: 1.3em;
+    position: relative;     
+    cursor: pointer;
+    z-index: 9999;
+  }
+  .menu span {
+    display: block;
+    height: 2px;
+    background: #fff;
+    border-radius: 50px;
+    width: 100%;
+    transition: .4s; 
+  }
+  .bar1 {
+    position: absolute;
+    top: 0;
+    transform: translateY(0);
+  }
+  .bar2 {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-75%);
+    width: 80%;
+  }
+  .bar3 {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  
+  .menu.active .bar2 {
+    width: 0;
+  }
+  .menu.active .bar1 {
+    top: 50%;
+    transform: translateY(-75%) rotate(45deg);
+  }
+  .menu.active .bar3 {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }

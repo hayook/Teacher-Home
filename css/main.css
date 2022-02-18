@@ -8,10 +8,18 @@ html {
 }
 
 body {
+  max-height: 100px;
   font-family: Poppins, sans-serif;
   background: #010409;
   color: #fff;
   font-size: 1.5rem;
+}
+
+body.disable-scrolling {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  overflow: hidden;
 }
 
 .container {
@@ -53,7 +61,7 @@ h1, h2, h3, h4, h5, h6, p {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 9999;
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -90,7 +98,7 @@ header .drop-down-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  z-index: 500;
+  z-index: 10000;
 }
 
 @media (min-width: 768px) {
@@ -361,7 +369,7 @@ header .navigate .search input::placeholder {
     position: absolute;
     right: 0;
     top: 100%;
-    z-index: 30;
+    z-index: 100;
   }
   header .navigate .search.down {
     display: -webkit-box;
@@ -462,8 +470,69 @@ header .profile i.more {
   }
 }
 
+header .profile .menu {
+  height: 1em;
+  width: 1.3em;
+  position: relative;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+header .profile .menu span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  border-radius: 50px;
+  width: 100%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+header .profile .bar1 {
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+header .profile .bar2 {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-75%);
+          transform: translateY(-75%);
+  width: 80%;
+}
+
+header .profile .bar3 {
+  position: absolute;
+  top: 100%;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+header .profile .menu.active .bar2 {
+  width: 0;
+}
+
+header .profile .menu.active .bar1 {
+  top: 50%;
+  -webkit-transform: translateY(-75%) rotate(45deg);
+          transform: translateY(-75%) rotate(45deg);
+}
+
+header .profile .menu.active .bar3 {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+}
+
+header .profile .menu {
+  position: relative;
+  z-index: 100000;
+}
+
 @media (min-width: 768px) {
-  header .profile i.mobile-menu {
+  header .profile .menu {
     display: none;
   }
 }
