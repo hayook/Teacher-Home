@@ -7,6 +7,9 @@
       display: none;
     }  
   }
+  .menu.header-fixed {
+    z-index: 11000; 
+  }
   .menu span {
     display: block;
     height: 2px;

@@ -1,0 +1,27 @@
+.search {
+    @include flex-r-c-c(0); 
+    padding: 0 .7em; 
+    width: 300px; 
+    @include dark-hole(1); 
+    input {
+        outline: none; 
+        padding: .8em; 
+        background: transparent; 
+        color: $white; 
+        width: 100%; 
+    }
+    i,
+    input::placeholder {
+        color: $grey-clr-100; 
+    }
+    @media (max-width: 992px) {
+        display: none;
+        position: absolute;
+        right: 0; 
+        top: 100%; 
+        z-index: 100;
+        &.down {
+            display: flex;
+        }
+    }
+}

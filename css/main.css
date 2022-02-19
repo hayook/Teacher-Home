@@ -75,10 +75,6 @@ header.fixed {
   left: 0;
 }
 
-header.fixed .menu {
-  z-index: 11000;
-}
-
 header .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -484,6 +480,10 @@ header .profile .menu {
   header .profile .menu {
     display: none;
   }
+}
+
+header .profile .menu.header-fixed {
+  z-index: 11000;
 }
 
 header .profile .menu span {

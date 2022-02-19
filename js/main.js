@@ -110,7 +110,14 @@ toggleBtn.addEventListener('click', function () {
     toggleBtn.classList.toggle('active');
     toggleMenu.classList.toggle('show');
     document.querySelector('.overlay').classList.toggle('show'); 
-    document.querySelector('header').classList.toggle('fixed');  
+    document.querySelector('header').classList.toggle('fixed');
+    if (!menuToggled) {
+        toggleBtn.classList.add('header-fixed');
+    } else {
+        setTimeout(() => {
+            toggleBtn.classList.remove('header-fixed');
+        }, 300);
+    }
     menuToggled = !menuToggled; 
 }); 
 

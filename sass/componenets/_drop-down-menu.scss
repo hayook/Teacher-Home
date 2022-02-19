@@ -1,0 +1,120 @@
+.drop-down-menu { 
+    padding: 1.7em 0;
+    background: $grey-clr-300; 
+    box-shadow: -15px 15px 15px -10px $black;
+    position: absolute; 
+    top: 100%; 
+    right: 0;
+    z-index: 11000; 
+    @media (min-width: 768px) {
+        display: none; 
+        &.display {
+            display: block;
+        }
+    }
+    ul {
+        @include flex-c-c-c(0);
+        align-items: flex-start;
+        width: 280px; 
+        li {
+            min-width: 100%;
+            a {
+                display: flex; 
+                align-items: center;
+                padding: 0.9em 1em;
+                @media (min-width: 768px) {
+                    transition: $transition-4;
+                    &:hover {
+                        background: $blue-clr-100; 
+                        color: $black; 
+                        p {
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .icon {
+                    width: 2em; 
+                    height: 2em; 
+                    border-radius: 50%; 
+                    margin-right: .5em;
+                    position: relative;
+                    i {
+                        position: absolute; 
+                        top: 50%; 
+                        left: 50%; 
+                        transform: translate(-50%, -50%);
+                        font-size: 2em;
+                    }
+                }
+            } 
+        } 
+        li.switch-theme {
+            cursor: default; 
+            display: flex; 
+            align-items: center;
+            padding: 0.9em 1em;
+            @media (min-width: 768px) {
+                transition: $transition-4;
+                &:hover {
+                    background: $blue-clr-100; 
+                    color: $black; 
+                    p {
+                        font-weight: bold;
+                    }
+                }
+                &:hover .toggle-theme {
+                    transition: $transition-4;
+                    background: $black; 
+                }
+            }
+            .icon {
+                width: 2em; 
+                height: 2em; 
+                border-radius: 50%; 
+                margin-right: .5em;
+                position: relative;
+                i {
+                    position: absolute; 
+                    top: 50%; 
+                    left: 50%; 
+                    transform: translate(-50%, -50%);
+                    font-size: 2em;
+                }
+            }
+            @import '../componenets/toggle-btn';
+            .toggle-theme {
+                margin-left: auto; 
+            }
+        }
+        li.teacher-profile {
+            a { 
+                img {
+                    width: 2em; 
+                    border-radius: 50%; 
+                    margin-right: .5em; 
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        display: flex; 
+        position: fixed; 
+        top: 0; 
+        bottom: 0;
+        right: -100%;  
+        align-items: flex-start;
+        max-width: 80%;
+        transition: $transition-4;
+        padding-top: 3.7em;
+        &.show {
+            right: 0; 
+        }
+        .close {
+            position: absolute; 
+            top: 15px; 
+            right: 15px;
+            font-size: 1.2em;
+            cursor: pointer; 
+        } 
+    }
+}
