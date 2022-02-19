@@ -1,8 +1,11 @@
+.notification {
+    position: relative; 
+}
 .notification-drop {
-    position: absolute;
-    transform: translateX(calc(-100% + 1em)); 
+    position: absolute; 
     background: $grey-clr-300;
-    top: 100%; 
+    top: 150%;
+    right: 0;  
     padding: 1.7em 1.5em; 
     width: 400px; 
     min-height: 70vh; 
@@ -10,6 +13,8 @@
     z-index: 1000; 
     justify-content: center;
     box-shadow: 0px 9px 19px -4px $black;
+    border: 1px solid $grey-clr-200;
+    border-top: none;  
     user-select: none;
     @media (max-width: 500px) {
         left: 50%; 

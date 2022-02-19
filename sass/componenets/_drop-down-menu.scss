@@ -1,9 +1,14 @@
+.more-options {
+    position: relative; 
+}
 .drop-down-menu { 
     padding: 1.7em 0;
     background: $grey-clr-300; 
     box-shadow: -15px 15px 15px -10px $black;
+    border: 1px solid $grey-clr-200; 
+    border-top: none; 
     position: absolute; 
-    top: 100%; 
+    top: 150%; 
     right: 0;
     z-index: 11000; 
     @media (min-width: 768px) {
