@@ -1,14 +1,12 @@
-.more-options {
-    position: relative; 
-}
 .drop-down-menu { 
     padding: 1.7em 0;
+    width: 400px; 
     background: $grey-clr-300; 
     box-shadow: -15px 15px 15px -10px $black;
-    border: 1px solid $grey-clr-200; 
-    border-top: none; 
+    border: 1px solid $grey-clr-200;
+    border-radius: 8px;
     position: absolute; 
-    top: 150%; 
+    top: 100%; 
     right: 0;
     z-index: 11000; 
     @media (min-width: 768px) {
@@ -20,7 +18,7 @@
     ul {
         @include flex-c-c-c(0);
         align-items: flex-start;
-        width: 280px; 
+        width: 100%; 
         li {
             min-width: 100%;
             a {
