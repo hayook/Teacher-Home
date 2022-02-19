@@ -2,7 +2,7 @@
     height: 1em;
     width: 1.3em;     
     cursor: pointer; 
-    position: relative; 
+    position: relative;
     @media (min-width: 768px) {
       display: none;
     }  
@@ -13,9 +13,9 @@
   .menu span {
     display: block;
     height: 2px;
-    background: #fff;
     border-radius: 50px;
     width: 100%;
+    background: #fff;
     transition: .4s; 
   }
   .bar1 {
@@ -23,26 +23,53 @@
     top: 0;
     transform: translateY(0);
   }
+  .menu .bar2 {
+    background: none; 
+  }
   .bar2 {
     position: absolute;
     top: 50%; 
     transform: translateY(-75%);
-    width: 80%;
   }
+
   .bar3 {
     position: absolute;
     top: 100%;
     transform: translateY(-100%);
   }
-  
-  .menu.active .bar2 {
-    width: 0;
-  }
+
   .menu.active .bar1 {
     top: 50%;
     transform: translateY(-75%) rotate(45deg);
   }
+
+  .menu.active .bar2::before, 
+  .menu.active .bar2::after {
+    width: 0; 
+  }
+
   .menu.active .bar3 {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
+  }
+
+
+  .bar2::before,
+  .bar2::after {
+    content: ''; 
+    width: 50%; 
+    height: 100%; 
+    background: #fff;
+    position: absolute; 
+    top: 0; 
+    transition: .4s ease-in; 
+  }
+
+
+  .bar2::before {
+    left: 0; 
+  }
+
+  .bar2::after {
+    right: 0; 
   }

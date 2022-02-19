@@ -507,9 +507,9 @@ header .profile .menu.header-fixed {
 header .profile .menu span {
   display: block;
   height: 2px;
-  background: #fff;
   border-radius: 50px;
   width: 100%;
+  background: #fff;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -521,12 +521,15 @@ header .profile .bar1 {
           transform: translateY(0);
 }
 
+header .profile .menu .bar2 {
+  background: none;
+}
+
 header .profile .bar2 {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-75%);
           transform: translateY(-75%);
-  width: 80%;
 }
 
 header .profile .bar3 {
@@ -536,20 +539,41 @@ header .profile .bar3 {
           transform: translateY(-100%);
 }
 
-header .profile .menu.active .bar2 {
-  width: 0;
-}
-
 header .profile .menu.active .bar1 {
   top: 50%;
   -webkit-transform: translateY(-75%) rotate(45deg);
           transform: translateY(-75%) rotate(45deg);
 }
 
+header .profile .menu.active .bar2::before,
+header .profile .menu.active .bar2::after {
+  width: 0;
+}
+
 header .profile .menu.active .bar3 {
   top: 50%;
   -webkit-transform: translateY(-50%) rotate(-45deg);
           transform: translateY(-50%) rotate(-45deg);
+}
+
+header .profile .bar2::before,
+header .profile .bar2::after {
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  -webkit-transition: .4s ease-in;
+  transition: .4s ease-in;
+}
+
+header .profile .bar2::before {
+  left: 0;
+}
+
+header .profile .bar2::after {
+  right: 0;
 }
 
 header .profile a.teacher-profile {
