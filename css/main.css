@@ -362,18 +362,33 @@ header .navigate .search input::placeholder {
   color: #8a939e;
 }
 
+header .navigate .search .search-back {
+  display: none;
+  cursor: pointer;
+}
+
 @media (max-width: 992px) {
   header .navigate .search {
     display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    z-index: 100;
   }
-  header .navigate .search.down {
+  header .navigate .search.search-on {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  header .navigate .search.search-on .search-back {
+    display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  header .navigate.search-on {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
 }
 
@@ -434,6 +449,9 @@ header .profile {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+  header .profile.search-on {
+    display: none;
   }
 }
 

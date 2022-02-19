@@ -14,14 +14,22 @@
     input::placeholder {
         color: $grey-clr-100; 
     }
+    .search-back {
+        display: none; 
+        cursor: pointer; 
+    }
     @media (max-width: 992px) {
         display: none;
-        position: absolute;
-        right: 0; 
-        top: 100%; 
-        z-index: 100;
-        &.down {
-            display: flex;
+    //     position: absolute;
+    //     right: 0; 
+    //     top: 100%; 
+    //     z-index: 100;
+        &.search-on {
+            display: flex; 
+            flex: 1;  
+            .search-back {
+                display: block; 
+            }
         }
     }
 }

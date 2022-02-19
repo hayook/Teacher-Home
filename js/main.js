@@ -87,18 +87,18 @@ themeToggleBtn.addEventListener('click', function () {
 
 // =============================================================================================================
 
-const searchBtn = document.querySelector('i.mobile-search'); 
-const searchBox = document.querySelector('#search-box'); 
-let searchBoxDown = false; 
+// const searchBtn = document.querySelector('i.mobile-search'); 
+// const searchBox = document.querySelector('#search-box'); 
+// let searchBoxDown = false; 
 
-searchBtn.addEventListener('click', function () {
-    if (!searchBoxDown) {
-        searchBox.classList.add('down');
-    } else {
-        searchBox.classList.remove('down');
-    }
-    searchBoxDown = !searchBoxDown; 
-});
+// searchBtn.addEventListener('click', function () {
+//     if (!searchBoxDown) {
+//         searchBox.classList.add('down');
+//     } else {
+//         searchBox.classList.remove('down');
+//     }
+//     searchBoxDown = !searchBoxDown; 
+// });
 
 // =============================================================================================================
 
@@ -155,3 +155,33 @@ function closePopup(popup) {
 
 
 // With WDS Video instade of a code for every pop i can write one code for all the popups using data attributes
+
+// =============================================================================================================
+
+const openSearchBox = document.querySelector('i.mobile-search'); 
+const searchBox = document.querySelector('.search');
+const closeSearchBox = document.querySelector('i.search-back');
+const teacherProfile = document.querySelector('.profile');
+const navigatePart = document.querySelector('header .navigate');
+const searchInput = document.querySelector('.search input');
+
+openSearchBox.addEventListener('click', function () {
+    openSearch()
+})
+
+closeSearchBox.addEventListener('click', function () {
+    closeSearch() 
+})
+
+function openSearch() {
+    searchBox.classList.add('search-on')
+    teacherProfile.classList.add('search-on')
+    navigatePart.classList.add('search-on')
+    searchInput.focus(); 
+}
+
+function closeSearch() {
+    searchBox.classList.remove('search-on')
+    teacherProfile.classList.remove('search-on')
+    navigatePart.classList.remove('search-on')
+}

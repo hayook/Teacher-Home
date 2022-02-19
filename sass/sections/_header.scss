@@ -16,6 +16,11 @@ header {
     .navigate {
         @include flex-r-c-c(1.3); 
         @import '../componenets/_search-box';
+        @media (max-width: 992px) {
+            &.search-on {
+                flex: 1;
+            }
+        }
         nav { 
             @include flex-r-c-c(0); 
             a {
@@ -31,6 +36,9 @@ header {
         @include flex-r-c-c(1.4);
         @media (max-width: 992px) {
             flex: 1; 
+            &.search-on {
+                display: none; 
+            }
         } 
         i {
             font-size: 1.9rem;
