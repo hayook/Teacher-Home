@@ -97,7 +97,7 @@ header .drop-down-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  z-index: 1000;
+  z-index: 11000;
 }
 
 @media (min-width: 768px) {
