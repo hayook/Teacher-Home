@@ -185,3 +185,12 @@ function closeSearch() {
     teacherProfile.classList.remove('search-on')
     navigatePart.classList.remove('search-on')
 }
+
+// =============================================================================================================
+
+notificationIcon = document.querySelector('i.notification-icon'); 
+notificationDrop = document.querySelector('.notification-drop'); 
+
+notificationIcon.addEventListener('click', function () {
+    notificationDrop.classList.toggle('display'); 
+})
