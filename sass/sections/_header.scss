@@ -1,5 +1,15 @@
 header {
     background: $grey-clr-300;
+    &.fixed {
+        position: fixed;
+        top: 0; 
+        right: 0;
+        z-index: 100;  
+        left: 0; 
+        .menu {
+            z-index: 11000;  
+        }
+    }
     .container {
         @include flex-r-c-b(); 
         padding: .8em 15px; 
@@ -11,8 +21,8 @@ header {
         box-shadow: -15px 15px 15px -10px $black;
         position: absolute; 
         top: 100%; 
-        right: 0; 
-        z-index: 10000; 
+        right: 0;
+        z-index: 11000; 
         @media (min-width: 768px) {
             display: none; 
             &.display {
@@ -187,15 +197,7 @@ header {
                 display: none;
             }
         }
-        @import '../componenets/menu-button';
-        .menu {
-            position: relative; 
-            z-index: 100000; 
-            @media (min-width: 768px) {
-                display: none;
-            }
-        }
-        
+        @import '../componenets/menu-button';    
         a.teacher-profile {
             @include flex-r-c-c(.5); 
             @include nav-elements-hover();

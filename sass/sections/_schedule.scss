@@ -120,8 +120,10 @@ $cell-border-radius: $border-r-2;
                                 border-radius: 4px;
                                 transform: scale(0);
                                 transition: $transition-4;
-                                &:hover { 
-                                    transform: scale(1.2);
+                                @media (min-width: 768px) {
+                                    &:hover { 
+                                        transform: scale(1.2);
+                                    }
                                 }
                                 i {
                                     position: relative;
@@ -131,8 +133,10 @@ $cell-border-radius: $border-r-2;
                             @each $functionality, $back-color, $hover-color in $functionalities {
                                 a.#{$functionality} {
                                     background: $back-color;
-                                    &:hover {
-                                        background: $hover-color;
+                                    @media (min-width: 768px) {
+                                        &:hover {
+                                            background: $hover-color;
+                                        }
                                     }
                                 }
                             }

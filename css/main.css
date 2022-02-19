@@ -15,13 +15,6 @@ body {
   font-size: 1.5rem;
 }
 
-body.disable-scrolling {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  overflow: hidden;
-}
-
 .container {
   padding: 0 15px;
   margin: 0 auto;
@@ -54,7 +47,7 @@ body.disable-scrolling {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 10000;
   background: rgba(0, 0, 0, 0.6);
 }
 
@@ -72,6 +65,18 @@ body.disable-scrolling {
 /* Start Header */
 header {
   background: #161b22;
+}
+
+header.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  left: 0;
+}
+
+header.fixed .menu {
+  z-index: 11000;
 }
 
 header .container {
@@ -96,7 +101,7 @@ header .drop-down-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  z-index: 10000;
+  z-index: 11000;
 }
 
 @media (min-width: 768px) {
@@ -471,9 +476,14 @@ header .profile i.more {
 header .profile .menu {
   height: 1em;
   width: 1.3em;
-  position: relative;
   cursor: pointer;
-  z-index: 9999;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  header .profile .menu {
+    display: none;
+  }
 }
 
 header .profile .menu span {
@@ -522,17 +532,6 @@ header .profile .menu.active .bar3 {
   top: 50%;
   -webkit-transform: translateY(-50%) rotate(-45deg);
           transform: translateY(-50%) rotate(-45deg);
-}
-
-header .profile .menu {
-  position: relative;
-  z-index: 100000;
-}
-
-@media (min-width: 768px) {
-  header .profile .menu {
-    display: none;
-  }
 }
 
 header .profile a.teacher-profile {
@@ -975,9 +974,11 @@ header .profile a.teacher-profile img {
   transition: 0.8s;
 }
 
-.schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+@media (min-width: 768px) {
+  .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
 }
 
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a i {
@@ -989,24 +990,30 @@ header .profile a.teacher-profile img {
   background: #238636;
 }
 
-.schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.start:hover {
-  background: #49a75a;
+@media (min-width: 768px) {
+  .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.start:hover {
+    background: #49a75a;
+  }
 }
 
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.edit {
   background: #df3a11;
 }
 
-.schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.edit:hover {
-  background: #e9795d;
+@media (min-width: 768px) {
+  .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.edit:hover {
+    background: #e9795d;
+  }
 }
 
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.remove {
   background: #cb0101;
 }
 
-.schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.remove:hover {
-  background: #ff1f1f;
+@media (min-width: 768px) {
+  .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.remove:hover {
+    background: #ff1f1f;
+  }
 }
 
 /* End Schedule Section */

@@ -1,9 +1,11 @@
 .menu {
     height: 1em;
-    width: 1.3em;
-    position: relative;     
-    cursor: pointer;
-    z-index: 9999;
+    width: 1.3em;     
+    cursor: pointer; 
+    position: relative; 
+    @media (min-width: 768px) {
+      display: none;
+    }  
   }
   .menu span {
     display: block;

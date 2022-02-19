@@ -109,8 +109,8 @@ let menuToggled = false;
 toggleBtn.addEventListener('click', function () {
     toggleBtn.classList.toggle('active');
     toggleMenu.classList.toggle('show');
-    document.querySelector('.overlay').classList.toggle('show');
-    document.querySelector('body').classList.toggle('disable-scrolling');   
+    document.querySelector('.overlay').classList.toggle('show'); 
+    document.querySelector('header').classList.toggle('fixed');  
     menuToggled = !menuToggled; 
 }); 
 
