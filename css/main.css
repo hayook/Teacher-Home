@@ -1108,32 +1108,36 @@ header .profile a.teacher-profile img {
 /* End Schedule Section */
 /* Start Start Popup */
 .start-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
   z-index: 100000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 30px;
-  border-radius: 10px;
-  background: #f1f1f1;
-  color: #000;
+  background: #0d1117;
   -webkit-box-shadow: -5px 5px 30px -10px #000;
           box-shadow: -5px 5px 30px -10px #000;
+  border: 1px solid rgba(238, 245, 252, 0.2);
   width: 600px;
   max-height: 80vh;
   font-weight: bold;
-  font-size: 1.7em;
   opacity: 0;
   -webkit-transition: .3s;
   transition: .3s;
   text-align: center;
+  font-size: 1.7em;
 }
 
 @media (max-width: 700px) {
@@ -1142,7 +1146,18 @@ header .profile a.teacher-profile img {
   }
 }
 
-.start-section button {
+.start-section h1 {
+  text-align: start;
+  font-weight: 400;
+}
+
+@media (max-width: 300px) {
+  .start-section h1 {
+    font-size: 1.5em;
+  }
+}
+
+.start-section button.close-pop {
   position: absolute;
   top: .5em;
   right: 20px;
@@ -1150,6 +1165,16 @@ header .profile a.teacher-profile img {
   border: none;
   cursor: pointer;
   font-size: 22px;
+  color: #fff;
+}
+
+.start-section hr {
+  display: block;
+  height: 1px;
+  width: 100%;
+  border: none;
+  margin: 10px 0;
+  background: rgba(238, 245, 252, 0.2);
 }
 
 .start-section.pop {
@@ -1159,4 +1184,158 @@ header .profile a.teacher-profile img {
 }
 
 /* End Start Popup */
+/* Start Remove Popup */
+.remove-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  z-index: 100000;
+  background: #0d1117;
+  -webkit-box-shadow: -5px 5px 30px -10px #000;
+          box-shadow: -5px 5px 30px -10px #000;
+  border: 1px solid rgba(238, 245, 252, 0.2);
+  width: 600px;
+  max-height: 80vh;
+  font-weight: bold;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .remove-section {
+    width: 95%;
+  }
+}
+
+.remove-section h1 {
+  text-align: start;
+  font-weight: 400;
+}
+
+@media (max-width: 300px) {
+  .remove-section h1 {
+    font-size: 1.5em;
+  }
+}
+
+.remove-section button.close-pop {
+  position: absolute;
+  top: .5em;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #fff;
+}
+
+.remove-section hr {
+  display: block;
+  height: 1px;
+  width: 100%;
+  border: none;
+  margin: 10px 0;
+  background: rgba(238, 245, 252, 0.2);
+}
+
+.remove-section.pop {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.remove-section .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 100%;
+}
+
+.remove-section .body .session-info p {
+  text-align: start;
+  margin: .4em 0;
+}
+
+.remove-section .body .textarea-wrapper {
+  margin: 1em 0;
+  width: 100%;
+}
+
+.remove-section .body .textarea-wrapper textarea {
+  display: block;
+  background: #010409;
+  border: 1px solid rgba(238, 245, 252, 0.2);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 50%;
+  min-height: 100px;
+  max-height: 200px;
+  padding: 1em;
+  color: #fff;
+}
+
+.remove-section .body .send-notification label {
+  color: #8a939e;
+}
+
+.remove-section .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.5em;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.remove-section .footer button {
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  padding: .5em 1.2em;
+  margin: 0 .5em;
+  cursor: pointer;
+  font-size: .9em;
+}
+
+.remove-section .footer button.cancel {
+  background: rgba(238, 245, 252, 0.2);
+}
+
+.remove-section .footer button.remove {
+  background: #ff1f1f;
+}
+
+/* End Remove Popup */
 /*# sourceMappingURL=main.css.map */

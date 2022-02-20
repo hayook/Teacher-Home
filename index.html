@@ -24,7 +24,7 @@
 
     <!-- Start Header -->
     <header>
-        <div class="overlay"></div>
+        <div class=" overlay"></div>
         <div class="container">
             <div class="navigate">
                 <div class="search" id="search-box">
@@ -119,9 +119,9 @@
                         <p class="classroom">Classroom : <a href="#">32</a></p>
                     </div>
                     <div class="functionalities">
-                        <a href="#" class="start-btn" id="startSessionBtn">Start</a>
-                        <a href="#" class="edit-btn">Edit</a>
-                        <a href="#" class="remove-btn">Remove</a>
+                        <a href="#" class="start-btn open-popup" data-popup="#startSessionPopup">Start</a>
+                        <a href="#" class="edit-btn open-popup" data-popup="#startSessionPopup">Edit</a>
+                        <a href="#" class="remove-btn open-popup" data-popup="#removeSessionPopup">Remove</a>
                     </div>
                 </div>
             </div>
@@ -166,11 +166,39 @@
     <!-- End Schedule Section -->
 
     <!-- Start Start PopUp -->
-    <div class="start-section" id="startSessionPopup">
-        <button>&times;</button>
+    <div class="start-section popup" id="startSessionPopup">
+        <button class="close-pop close-popup" data-popup="#startSessionPopup">&times;</button>
         Comming Soon...
     </div>
     <!-- End Start PopUp -->
+
+    <!-- Start Remove PopUp -->
+    <div class="remove-section popup" id="removeSessionPopup">
+        <div class="head">
+            <h1>Remove Session</h1>
+            <button class="close-pop close-popup" data-popup="#removeSessionPopup">&times;</button>
+        </div>
+        <hr>
+        <div class="body">
+            <div class="session-info">
+                <p>08 : 00 - 09 : 00</p>
+                <p>Classroom : 32</p>
+                <p>Section: 3M1</p>
+            </div>
+            <div class="textarea-wrapper">
+                <textarea class="reason" placeholder="Type The Reason"></textarea>
+            </div>
+            <div class="send-notification">
+                <input type="checkbox">
+                <label>Notify The Administration</label>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="cancel close-popup" data-popup="#removeSessionPopup">Cancel</button>
+            <button class="remove close-popup" data-popup="#removeSessionPopup">Remove</button>
+        </div>
+    </div>
+    <!-- End Remove PopUp -->
 
     <!-- Main JS File -->
     <script src="js/main.js"></script>

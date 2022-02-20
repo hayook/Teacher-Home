@@ -1,0 +1,60 @@
+.remove-section {
+    @include popup();
+
+    .body {
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        align-self: flex-start; 
+        width: 100%; 
+        .session-info {
+            p {
+                text-align: start;
+                margin: .4em 0; 
+            }
+        }
+        .textarea-wrapper { 
+            margin: 1em 0; 
+            width: 100%; 
+            textarea {
+                display: block;  
+                @include dark-hole(0);
+                width: 100%;
+                max-width: 100%; 
+                min-width: 50%;
+                min-height: 100px; 
+                max-height: 200px; 
+                padding: 1em; 
+                color: $white; 
+                
+            }   
+        }
+        .send-notification {
+            label {
+                color: $grey-clr-100; 
+            }
+        }
+    }
+    .footer {
+        display: flex; 
+        align-items: center;
+        margin-top: 1.5em; 
+        align-self: flex-end;
+        button {
+            border-radius: $border-r-1; 
+            border: none; 
+            color: $white; 
+            padding: .5em 1.2em;
+            margin: 0 .5em; 
+            cursor: pointer; 
+            font-size: .9em;
+        }
+        button.cancel { 
+            background: $grey-clr-200;  
+        }
+        button.remove {
+            background: $red-clr-200; 
+        }
+    }
+}

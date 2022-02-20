@@ -377,3 +377,16 @@ h1 {
 img {
   user-select: none;
 }
+input[type="checkbox"] {
+  position: relative; 
+  top: 2px; 
+}
+input[type="checkbox"] + label {
+  font-size: .8em;
+}
+
+button {
+  border: none; 
+  background: none; 
+  color: #fff; 
+}

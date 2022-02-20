@@ -12,23 +12,25 @@ for (let i = 0; i < 40; i++) {
     funcitonalities.className = 'functionalities';
 
     let startBtn = document.createElement('a'); 
-    startBtn.className = 'start'; 
-    startBtn.id = 'startSessionBtn'; 
+    startBtn.className = 'start open-popup'; 
+    startBtn.setAttribute('data-popup', '#startSessionPopup')
     startBtn.href = '#'; 
     startIcon = document.createElement('i'); 
     startIcon.className = 'fas fa-play'; 
     startBtn.appendChild(startIcon);
 
     let removeBtn = document.createElement('a'); 
-    removeBtn.className = 'remove'; 
+    removeBtn.className = 'remove open-popup'; 
     removeBtn.href = '#'; 
+    removeBtn.setAttribute('data-popup', '#removeSessionPopup')
     removeIcon = document.createElement('i'); 
     removeIcon.className = 'fas fa-trash'; 
     removeBtn.appendChild(removeIcon);
 
     let editBtn = document.createElement('a'); 
-    editBtn.className = 'edit'; 
+    editBtn.className = 'edit open-popup'; 
     editBtn.href = '#'; 
+    editBtn.setAttribute('data-popup', '#startSessionPopup')
     editIcon = document.createElement('i'); 
     editIcon.className = 'fas fa-pen'; 
     editBtn.appendChild(editIcon);
@@ -132,6 +134,7 @@ window.onclick = function ({target}) {
 
 const toggleBtn = document.querySelector('div.menu'); 
 const toggleMenu = document.querySelector('#drop-down-menu');
+const bodyOverlay = document.querySelector('.overlay'); 
 let menuToggled = false; 
 
 toggleBtn.addEventListener('click', function () {
@@ -149,31 +152,7 @@ toggleBtn.addEventListener('click', function () {
     menuToggled = !menuToggled; 
 }); 
 
-
-
-// =============================================================================================================
-/// Start Session Popup
-
-const startSessionBtn = document.querySelectorAll('#startSessionBtn'); 
-const startSessionPopup = document.querySelector('#startSessionPopup');
-const startSessionClose = document.querySelector('#startSessionPopup button');
-
-startSessionBtn.forEach(btn => {
-    btn.addEventListener('click', function () {
-        openPopup(startSessionPopup); 
-        document.querySelector('.overlay').classList.add('active'); 
-    });
-})
-
-startSessionClose.addEventListener('click', function () {
-    closePopup(startSessionPopup);
-    document.querySelector('.overlay').classList.remove('active'); 
-})
-
-document.querySelector('.overlay').addEventListener('click', function () {
-    closePopup(startSessionPopup); // here its gonna take the opned model so i can apply this even on the toggle menu with just one function so its gonna take as a parametre the menu and it will close just the open modal
-    this.classList.remove('active'); 
-
+bodyOverlay.addEventListener('click', function () {
     toggleBtn.classList.remove('active'); 
     toggleMenu.classList.remove('show'); 
     this.classList.remove('mobile-show'); 
@@ -181,13 +160,39 @@ document.querySelector('.overlay').addEventListener('click', function () {
     setTimeout(() => {
         toggleBtn.classList.remove('header-fixed');
     }, 400);
-    menuToggled = false; 
+    menuToggled = false;
 })
 
-function openPopup(popup) {
-    popup.classList.add('pop'); 
-}
 
-function closePopup(popup) {
-    popup.classList.remove('pop');
-}
+
+// =============================================================================================================
+/// Popups
+
+const openPopupBtns = document.querySelectorAll('.open-popup');
+const closePopupBtns = document.querySelectorAll('.close-popup');
+const popups = document.querySelectorAll('.popup');
+
+openPopupBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        const popup = document.querySelector(btn.dataset.popup); 
+        popup.classList.add('pop'); 
+        bodyOverlay.classList.add('active');
+    })
+})
+
+closePopupBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        const popup = document.querySelector(btn.dataset.popup); 
+        popup.classList.remove('pop'); 
+        bodyOverlay.classList.remove('active');
+    })
+})
+
+bodyOverlay.addEventListener('click', function () {
+    popups.forEach(popup => {
+        popup.classList.remove('pop'); 
+        bodyOverlay.classList.remove('active'); 
+    })
+})
+
+// I Wanna make the popups and the toglle menu and the drop down in one function with one code 
