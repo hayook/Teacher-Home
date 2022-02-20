@@ -144,7 +144,7 @@ toggleBtn.addEventListener('click', function () {
     } else {
         setTimeout(() => {
             toggleBtn.classList.remove('header-fixed');
-        }, 300);
+        }, 400);
     }
     menuToggled = !menuToggled; 
 }); 
@@ -180,7 +180,7 @@ document.querySelector('.overlay').addEventListener('click', function () {
     document.querySelector('header').classList.remove('fixed');
     setTimeout(() => {
         toggleBtn.classList.remove('header-fixed');
-    }, 300);
+    }, 400);
     menuToggled = false; 
 })
 
