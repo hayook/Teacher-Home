@@ -52,7 +52,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .overlay.show {
+  .overlay.mobile-show {
     display: block;
   }
 }
@@ -107,7 +107,7 @@ header .drop-down-menu {
   header .drop-down-menu {
     display: none;
   }
-  header .drop-down-menu.display {
+  header .drop-down-menu.active {
     display: block;
   }
 }
@@ -133,6 +133,10 @@ header .drop-down-menu ul {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 100%;
 }
 
@@ -508,7 +512,7 @@ header .profile .notification-drop {
   }
 }
 
-header .profile .notification-drop.display {
+header .profile .notification-drop.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

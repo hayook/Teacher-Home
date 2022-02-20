@@ -45,21 +45,6 @@ for (let i = 0; i < 40; i++) {
 
 // =============================================================================================================
 
-const dropBtn = document.querySelector('#drop-menu-btn'); 
-const dropMenu = document.querySelector('#drop-down-menu'); 
-let menuDroped = false; 
-
-dropBtn.addEventListener('click', function () {
-    if (!menuDroped) {
-        dropMenu.classList.add('display'); 
-    } else {
-        dropMenu.classList.remove('display');
-    }
-    menuDroped = !menuDroped;
-})
-
-// =============================================================================================================
-
 const themeToggleBtn = document.querySelector('header #toggle-theme'); 
 let darkTheme = getComputedStyle(document.querySelector(':root')).getPropertyValue('$dark-theme'); 
 
@@ -86,77 +71,7 @@ themeToggleBtn.addEventListener('click', function () {
 });
 
 // =============================================================================================================
-
-// const searchBtn = document.querySelector('i.mobile-search'); 
-// const searchBox = document.querySelector('#search-box'); 
-// let searchBoxDown = false; 
-
-// searchBtn.addEventListener('click', function () {
-//     if (!searchBoxDown) {
-//         searchBox.classList.add('down');
-//     } else {
-//         searchBox.classList.remove('down');
-//     }
-//     searchBoxDown = !searchBoxDown; 
-// });
-
-// =============================================================================================================
-
-const toggleBtn = document.querySelector('div.menu'); 
-const toggleMenu = document.querySelector('#drop-down-menu');
-let menuToggled = false; 
-
-toggleBtn.addEventListener('click', function () {
-    toggleBtn.classList.toggle('active');
-    toggleMenu.classList.toggle('show');
-    document.querySelector('.overlay').classList.toggle('show'); 
-    document.querySelector('header').classList.toggle('fixed');
-    if (!menuToggled) {
-        toggleBtn.classList.add('header-fixed');
-    } else {
-        setTimeout(() => {
-            toggleBtn.classList.remove('header-fixed');
-        }, 300);
-    }
-    menuToggled = !menuToggled; 
-}); 
-
-// =============================================================================================================
-
-const startSessionBtn = document.querySelectorAll('#startSessionBtn'); 
-const startSessionPopup = document.querySelector('#startSessionPopup');
-const startSessionClose = document.querySelector('#startSessionPopup button');
-
-startSessionBtn.forEach(btn => {
-    btn.addEventListener('click', function () {
-        openPopup(startSessionPopup); 
-        document.querySelector('.overlay').classList.add('active'); 
-    });
-})
-
-startSessionClose.addEventListener('click', function () {
-    closePopup(startSessionPopup);
-    document.querySelector('.overlay').classList.remove('active'); 
-})
-
-document.querySelector('.overlay').addEventListener('click', function () {
-    closePopup(startSessionPopup); // here its gonna take the opned model so i can apply this even on the toggle menu with just one function so its gonna take as a parametre the menu and it will close just the open modal
-    this.classList.remove('active'); 
-})
-
-function openPopup(popup) {
-    popup.classList.add('pop'); 
-}
-
-function closePopup(popup) {
-    popup.classList.remove('pop');
-}
-
-
-
-// With WDS Video instade of a code for every pop i can write one code for all the popups using data attributes
-
-// =============================================================================================================
+/// Search Box 
 
 const openSearchBox = document.querySelector('i.mobile-search'); 
 const searchBox = document.querySelector('.search');
@@ -187,10 +102,92 @@ function closeSearch() {
 }
 
 // =============================================================================================================
+/// Drop Down
 
-notificationIcon = document.querySelector('i.notification-icon'); 
-notificationDrop = document.querySelector('.notification-drop'); 
+const btns = document.querySelectorAll('.btn')
+const drops = document.querySelectorAll('.drop')
 
-notificationIcon.addEventListener('click', function () {
-    notificationDrop.classList.toggle('display'); 
+
+window.onclick = function ({target}) {
+    btns.forEach(btn => {
+        if (!target.matches(`#${btn.id}`)) {
+            if (!target.matches(btn.dataset.modal) && !document.querySelector(btn.dataset.modal).contains(target)) {
+                document.querySelector(btn.dataset.modal).classList.remove('active');
+            }
+        } else {
+            let droped = document.querySelector(btn.dataset.modal).classList.contains('active');
+
+            if (!droped) {
+                document.querySelector(btn.dataset.modal).classList.add('active');
+            } else {
+                document.querySelector(btn.dataset.modal).classList.remove('active');
+            }
+        }
+    })
+}
+
+
+// =============================================================================================================
+/// Mobile Toggle Menu
+
+const toggleBtn = document.querySelector('div.menu'); 
+const toggleMenu = document.querySelector('#drop-down-menu');
+let menuToggled = false; 
+
+toggleBtn.addEventListener('click', function () {
+    toggleBtn.classList.toggle('active');
+    toggleMenu.classList.toggle('show');
+    document.querySelector('.overlay').classList.toggle('mobile-show'); 
+    document.querySelector('header').classList.toggle('fixed');
+    if (!menuToggled) {
+        toggleBtn.classList.add('header-fixed');
+    } else {
+        setTimeout(() => {
+            toggleBtn.classList.remove('header-fixed');
+        }, 300);
+    }
+    menuToggled = !menuToggled; 
+}); 
+
+
+
+// =============================================================================================================
+/// Start Session Popup
+
+const startSessionBtn = document.querySelectorAll('#startSessionBtn'); 
+const startSessionPopup = document.querySelector('#startSessionPopup');
+const startSessionClose = document.querySelector('#startSessionPopup button');
+
+startSessionBtn.forEach(btn => {
+    btn.addEventListener('click', function () {
+        openPopup(startSessionPopup); 
+        document.querySelector('.overlay').classList.add('active'); 
+    });
 })
+
+startSessionClose.addEventListener('click', function () {
+    closePopup(startSessionPopup);
+    document.querySelector('.overlay').classList.remove('active'); 
+})
+
+document.querySelector('.overlay').addEventListener('click', function () {
+    closePopup(startSessionPopup); // here its gonna take the opned model so i can apply this even on the toggle menu with just one function so its gonna take as a parametre the menu and it will close just the open modal
+    this.classList.remove('active'); 
+
+    toggleBtn.classList.remove('active'); 
+    toggleMenu.classList.remove('show'); 
+    this.classList.remove('mobile-show'); 
+    document.querySelector('header').classList.remove('fixed');
+    setTimeout(() => {
+        toggleBtn.classList.remove('header-fixed');
+    }, 300);
+    menuToggled = false; 
+})
+
+function openPopup(popup) {
+    popup.classList.add('pop'); 
+}
+
+function closePopup(popup) {
+    popup.classList.remove('pop');
+}

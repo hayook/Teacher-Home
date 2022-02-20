@@ -8,7 +8,7 @@
     z-index: 10000; 
     background: rgba(0, 0, 0, .6);
     @media (max-width: 768px) {
-        &.show {
+        &.mobile-show {
             display: block;
         }
     }
