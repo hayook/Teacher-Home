@@ -4,16 +4,16 @@ $cell-border-radius: $border-r-2;
     padding: 0 15px; 
     @include flex-r-c-c(0); 
     height: 60px;
-    background: $blue-clr-300; 
+    background: var(--blue-clr-300); 
     border-radius: $cell-border-radius; 
-    border: 1px solid $grey-clr-200;
+    border: 1px solid var(--gery-clr-200);
 }
 
 .schedule {
     .container {
         margin-top: .7em;
         margin-bottom: .7em;
-        background: $blue-clr-300; 
+        background: var(--blue-clr-300); 
         padding: .8em 15px; 
     }
     ul.filter {
@@ -25,7 +25,7 @@ $cell-border-radius: $border-r-2;
                 width: 100%; 
             }
         }
-        background: $grey-clr-300; 
+        background: var(--grey-clr-300); 
         position: relative;
         margin-bottom: 2em;
         li {
@@ -45,7 +45,7 @@ $cell-border-radius: $border-r-2;
             cursor: pointer;
             &:hover {
                 transition: $transition-4;
-                color: $grey-clr-100;
+                color: var(--grey-clr-100);
             }
             @media (max-width: 768px) {
                 display: none;
@@ -53,8 +53,8 @@ $cell-border-radius: $border-r-2;
         }
     }
     .schedule-tab {
-        background: $blue-clr-400; 
-        border: 1px solid $grey-clr-200;
+        background: var(--blue-clr-400); 
+        border: 1px solid var(--gery-clr-200);
         border-radius: $border-r-2;
         padding: 5px;
         @include main-grid(10); 
@@ -90,7 +90,7 @@ $cell-border-radius: $border-r-2;
                             opacity: 0; 
                             width: 100%; 
                             height: 100%; 
-                            background: rgba(#000, .8); 
+                            background: rgba(#000, .5); 
                             position: absolute;
                             left: 0; 
                             top: 0; 
@@ -128,6 +128,7 @@ $cell-border-radius: $border-r-2;
                                 i {
                                     position: relative;
                                     top: 1px; 
+                                    color: var(--fixed-white); 
                                 }
                             }
                             @each $functionality, $back-color, $hover-color in $functionalities {

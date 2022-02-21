@@ -1,12 +1,12 @@
-$functionalities: ('start' $green-clr-300 $green-clr-200),
-('edit' $orange-clr-300 $orange-clr-200),
-('remove' $red-clr-300 $red-clr-200); 
+$functionalities: ('start' var(--green-clr-300) var(--green-clr-200)),
+('edit' var(--orange-clr-300) var(--orange-clr-200)),
+('remove' var(--red-clr-300) var(--red-clr-200)); 
 
 .next-session {
     .container {
         margin-top: .7em; 
         margin-bottom: .7em; 
-        background: $blue-clr-300;
+        background: var(--blue-clr-300);
         padding: .8em 15px;
         @include flex-c-c-c(2.4);  
     }

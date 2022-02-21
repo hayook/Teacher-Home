@@ -2,6 +2,11 @@
     @each $clr-name, $clr-value in $dark {
         --#{$clr-name}: #{$clr-value};
     }
+    --box-shadow: #000; 
+    
+    // Don't change by changing the theme like overlay / box-shadow...
+    --fixed-white: #fff;
+    --fixed-black: #000;  
 }
 :root[theme="light"] {
     @each $clr-name, $clr-value in $light {

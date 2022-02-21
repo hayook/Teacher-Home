@@ -8,8 +8,8 @@ html {
 body {
     max-height: 100px; 
     font-family: Poppins, sans-serif;
-    background: $blue-clr-400; 
-    color: $white; 
+    background: var(--blue-clr-400); 
+    color: var(--white); 
     font-size: 1.5rem;
 }
 

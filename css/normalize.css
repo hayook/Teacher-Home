@@ -368,7 +368,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
 h1 {

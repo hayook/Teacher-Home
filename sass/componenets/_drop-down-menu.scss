@@ -1,9 +1,9 @@
 .drop-down-menu { 
     padding: 1.7em 0;
     width: 400px; 
-    background: $grey-clr-300; 
-    box-shadow: -15px 15px 15px -10px $black;
-    border: 1px solid $grey-clr-200;
+    background: var(--grey-clr-300); 
+    box-shadow: -15px 15px 15px -10px var(--box-shadow);
+    border: 1px solid var(--grey-clr-200);
     border-radius: 8px;
     position: absolute; 
     top: 100%; 
@@ -29,8 +29,8 @@
                 @media (min-width: 768px) {
                     transition: $transition-4;
                     &:hover {
-                        background: $blue-clr-100; 
-                        color: $black; 
+                        background: var(--blue-clr-100); 
+                        color: var(--black); 
                         p {
                             font-weight: bold;
                         }
@@ -60,15 +60,15 @@
             @media (min-width: 768px) {
                 transition: $transition-4;
                 &:hover {
-                    background: $blue-clr-100; 
-                    color: $black; 
+                    background: var(--blue-clr-100); 
+                    color: var(--black); 
                     p {
                         font-weight: bold;
                     }
                 }
                 &:hover .toggle-theme {
                     transition: $transition-4;
-                    background: $black; 
+                    background: var(--black); 
                 }
             }
             .icon {

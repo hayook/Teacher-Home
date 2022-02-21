@@ -1,5 +1,5 @@
 header {
-    background: $grey-clr-300;
+    background: var(--grey-clr-300);
     &.fixed {
         position: fixed;
         top: 0; 

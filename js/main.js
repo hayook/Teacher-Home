@@ -48,28 +48,17 @@ for (let i = 0; i < 40; i++) {
 // =============================================================================================================
 
 const themeToggleBtn = document.querySelector('header #toggle-theme'); 
-let darkTheme = getComputedStyle(document.querySelector(':root')).getPropertyValue('$dark-theme'); 
-
-console.log(darkTheme);
-
-if (darkTheme == 'true') {
-    themeToggleBtn.classList.add('switched');
-} else {
-    themeToggleBtn.classList.remove('switched');
-}
+const rootEl = document.documentElement; 
+let darked = true; 
+if (darked) themeToggleBtn.classList.add('switched');
+if (!darked) rootEl.setAttribute('theme', 'light'); 
 
 
 
 themeToggleBtn.addEventListener('click', function () {
-    if (darkTheme == 'true') {
-        themeToggleBtn.classList.remove('switched');
-        document.documentElement.style.setProperty('--dark-theme', 'false');
-        darkTheme = 'false'; 
-    } else {
-        themeToggleBtn.classList.add('switched');
-        document.documentElement.style.setProperty('--dark-theme', 'true');
-        darkTheme = 'true'; 
-    }
+    themeToggleBtn.classList.toggle('switched');
+    darked = !darked;
+    rootEl.setAttribute('theme', darked ? 'dark' : 'light');  
 });
 
 // =============================================================================================================
@@ -162,8 +151,6 @@ bodyOverlay.addEventListener('click', function () {
     }, 400);
     menuToggled = false;
 })
-
-
 
 // =============================================================================================================
 /// Popups

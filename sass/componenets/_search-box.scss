@@ -7,12 +7,12 @@
         outline: none; 
         padding: .8em; 
         background: transparent; 
-        color: $white; 
+        color:var(--white); 
         width: 100%; 
     }
     i,
     input::placeholder {
-        color: $grey-clr-100; 
+        color: var(--grey-clr-100); 
     }
     .search-back {
         display: none; 

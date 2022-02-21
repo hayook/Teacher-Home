@@ -17,6 +17,9 @@
   --red-clr-100: #fe6767;
   --red-clr-200: #ff1f1f;
   --red-clr-300: #cb0101;
+  --box-shadow: #000;
+  --fixed-white: #fff;
+  --fixed-black: #000;
 }
 
 :root[theme="light"] {
@@ -24,11 +27,11 @@
   --black: #fff;
   --blue-clr-100: #757575;
   --blue-clr-200: #c2c2c2;
-  --blue-clr-300: #000;
+  --blue-clr-300: #fff;
   --blue-clr-400: whitesmoke;
   --grey-clr-100: #757575;
   --grey-clr-200: #c2c2c2;
-  --grey-clr-300: #000;
+  --grey-clr-300: #fff;
 }
 
 /* Start Global Rules*/
@@ -43,8 +46,8 @@ html {
 body {
   max-height: 100px;
   font-family: Poppins, sans-serif;
-  background: #010409;
-  color: #fff;
+  background: var(--blue-clr-400);
+  color: var(--white);
   font-size: 1.5rem;
 }
 
@@ -97,7 +100,7 @@ body {
 /* End Overlay */
 /* Start Header */
 header {
-  background: #161b22;
+  background: var(--grey-clr-300);
 }
 
 header.fixed {
@@ -125,10 +128,10 @@ header .container {
 header .drop-down-menu {
   padding: 1.7em 0;
   width: 400px;
-  background: #161b22;
-  -webkit-box-shadow: -15px 15px 15px -10px #000;
-          box-shadow: -15px 15px 15px -10px #000;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  background: var(--grey-clr-300);
+  -webkit-box-shadow: -15px 15px 15px -10px var(--box-shadow);
+          box-shadow: -15px 15px 15px -10px var(--box-shadow);
+  border: 1px solid var(--grey-clr-200);
   border-radius: 8px;
   position: absolute;
   top: 100%;
@@ -189,12 +192,12 @@ header .drop-down-menu ul li a {
 
 @media (min-width: 768px) {
   header .drop-down-menu ul li a {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
   header .drop-down-menu ul li a:hover {
-    background: #1e70eb;
-    color: #000;
+    background: var(--blue-clr-100);
+    color: var(--black);
   }
   header .drop-down-menu ul li a:hover p {
     font-weight: bold;
@@ -231,20 +234,20 @@ header .drop-down-menu ul li.switch-theme {
 
 @media (min-width: 768px) {
   header .drop-down-menu ul li.switch-theme {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
   header .drop-down-menu ul li.switch-theme:hover {
-    background: #1e70eb;
-    color: #000;
+    background: var(--blue-clr-100);
+    color: var(--black);
   }
   header .drop-down-menu ul li.switch-theme:hover p {
     font-weight: bold;
   }
   header .drop-down-menu ul li.switch-theme:hover .toggle-theme {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    background: #000;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background: var(--black);
   }
 }
 
@@ -266,31 +269,33 @@ header .drop-down-menu ul li.switch-theme .icon i {
 }
 
 header .drop-down-menu ul li.switch-theme .toggle-theme {
-  background: rgba(238, 245, 252, 0.2);
+  background: var(--grey-clr-200);
   height: 15px;
   width: 25px;
   border-radius: 50px;
   position: relative;
   cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-header .drop-down-menu ul li.switch-theme .toggle-theme::before, header .drop-down-menu ul li.switch-theme .toggle-theme.switched::before {
+header .drop-down-menu ul li.switch-theme .toggle-theme::before {
   content: '';
   width: 15px;
   height: 15px;
-  background: #8a939e;
+  background: var(--grey-clr-100);
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 50%;
-  -webkit-transition: -webkit-transform 0.8s;
-  transition: -webkit-transform 0.8s;
-  transition: transform 0.8s;
-  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
 header .drop-down-menu ul li.switch-theme .toggle-theme.switched {
-  background: #75db8a;
+  background: var(--green-clr-300);
 }
 
 header .drop-down-menu ul li.switch-theme .toggle-theme.switched::before {
@@ -321,8 +326,8 @@ header .drop-down-menu ul li.teacher-profile a img {
         -ms-flex-align: start;
             align-items: flex-start;
     max-width: 80%;
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     padding-top: 3.7em;
   }
   header .drop-down-menu.show {
@@ -369,8 +374,8 @@ header .navigate .search {
   gap: 0em;
   padding: 0 .7em;
   width: 300px;
-  background: #0d1117;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  background: var(--blue-clr-300);
+  border: 1px solid var(--grey-clr-200);
   border-radius: 6px;
 }
 
@@ -378,28 +383,28 @@ header .navigate .search input {
   outline: none;
   padding: .8em;
   background: transparent;
-  color: #fff;
+  color: var(--white);
   width: 100%;
 }
 
 header .navigate .search i,
 header .navigate .search input::-webkit-input-placeholder {
-  color: #8a939e;
+  color: var(--grey-clr-100);
 }
 
 header .navigate .search i,
 header .navigate .search input:-ms-input-placeholder {
-  color: #8a939e;
+  color: var(--grey-clr-100);
 }
 
 header .navigate .search i,
 header .navigate .search input::-ms-input-placeholder {
-  color: #8a939e;
+  color: var(--grey-clr-100);
 }
 
 header .navigate .search i,
 header .navigate .search input::placeholder {
-  color: #8a939e;
+  color: var(--grey-clr-100);
 }
 
 header .navigate .search .search-back {
@@ -454,9 +459,9 @@ header .navigate nav a {
 
 @media (min-width: 768px) {
   header .navigate nav a:hover {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    color: #8a939e;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    color: var(--grey-clr-100);
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -502,9 +507,9 @@ header .profile i {
 
 @media (min-width: 768px) {
   header .profile i:hover {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    color: #8a939e;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    color: var(--grey-clr-100);
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -518,7 +523,7 @@ header .profile i {
 
 header .profile .notification-drop {
   position: absolute;
-  background: #161b22;
+  background: var(--grey-clr-300);
   top: 100%;
   right: 0;
   padding: 1.7em 1.5em;
@@ -529,9 +534,9 @@ header .profile .notification-drop {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-shadow: 0px 9px 19px -4px #000;
-          box-shadow: 0px 9px 19px -4px #000;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  -webkit-box-shadow: 0px 9px 19px -4px var(--box-shadow);
+          box-shadow: 0px 9px 19px -4px var(--box-shadow);
+  border: 1px solid var(--grey-clr-100);
   border-radius: 8px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -553,7 +558,7 @@ header .profile .notification-drop.active {
 
 header .profile .notification-drop p {
   font-style: italic;
-  color: #8a939e;
+  color: var(--grey-clr-100);
 }
 
 header .profile i.more {
@@ -589,7 +594,7 @@ header .profile .menu span {
   height: 2px;
   border-radius: 50px;
   width: 100%;
-  background: #fff;
+  background: var(--white);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -641,7 +646,7 @@ header .profile .bar2::after {
   content: '';
   width: 50%;
   height: 100%;
-  background: #fff;
+  background: var(--white);
   position: absolute;
   top: 0;
   -webkit-transition: .4s ease-in;
@@ -676,9 +681,9 @@ header .profile a.teacher-profile {
 
 @media (min-width: 768px) {
   header .profile a.teacher-profile:hover {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    color: #8a939e;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    color: var(--grey-clr-100);
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -709,7 +714,7 @@ header .profile a.teacher-profile img {
 .next-session .container {
   margin-top: .7em;
   margin-bottom: .7em;
-  background: #0d1117;
+  background: var(--blue-clr-300);
   padding: .8em 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -827,46 +832,49 @@ header .profile a.teacher-profile img {
 
 .next-session .next-session-info .session .functionalities a.start-btn {
   padding: .6em 2em;
-  background: #238636;
+  background: var(--green-clr-300);
   border-radius: 4px;
   text-align: center;
+  color: var(--fixed-white);
 }
 
 @media (min-width: 768px) {
   .next-session .next-session-info .session .functionalities a.start-btn:hover {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    background: #49a75a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background: var(--green-clr-200);
   }
 }
 
 .next-session .next-session-info .session .functionalities a.edit-btn {
   padding: .6em 2em;
-  background: #df3a11;
+  background: var(--orange-clr-300);
   border-radius: 4px;
   text-align: center;
+  color: var(--fixed-white);
 }
 
 @media (min-width: 768px) {
   .next-session .next-session-info .session .functionalities a.edit-btn:hover {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    background: #e9795d;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background: var(--orange-clr-200);
   }
 }
 
 .next-session .next-session-info .session .functionalities a.remove-btn {
   padding: .6em 2em;
-  background: #cb0101;
+  background: var(--red-clr-300);
   border-radius: 4px;
   text-align: center;
+  color: var(--fixed-white);
 }
 
 @media (min-width: 768px) {
   .next-session .next-session-info .session .functionalities a.remove-btn:hover {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    background: #ff1f1f;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background: var(--red-clr-200);
   }
 }
 
@@ -888,15 +896,15 @@ header .profile a.teacher-profile img {
           justify-content: center;
   gap: 0em;
   height: 60px;
-  background: #0d1117;
+  background: var(--blue-clr-300);
   border-radius: 6px;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  border: 1px solid var(--gery-clr-200);
 }
 
 .schedule .container {
   margin-top: .7em;
   margin-bottom: .7em;
-  background: #0d1117;
+  background: var(--blue-clr-300);
   padding: .8em 15px;
 }
 
@@ -917,7 +925,7 @@ header .profile a.teacher-profile img {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background: #161b22;
+  background: var(--grey-clr-300);
   position: relative;
   margin-bottom: 2em;
 }
@@ -945,9 +953,9 @@ header .profile a.teacher-profile img {
 
 @media (min-width: 768px) {
   .schedule ul.filter li:hover {
-    -webkit-transition: 0.8s;
-    transition: 0.8s;
-    color: #8a939e;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    color: var(--grey-clr-100);
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -964,9 +972,9 @@ header .profile a.teacher-profile img {
 }
 
 .schedule ul.filter i:hover {
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-  color: #8a939e;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: var(--grey-clr-100);
 }
 
 @media (max-width: 768px) {
@@ -976,8 +984,8 @@ header .profile a.teacher-profile img {
 }
 
 .schedule .schedule-tab {
-  background: #010409;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  background: var(--blue-clr-400);
+  border: 1px solid var(--gery-clr-200);
   border-radius: 6px;
   padding: 5px;
   display: -ms-grid;
@@ -1045,12 +1053,12 @@ header .profile a.teacher-profile img {
   opacity: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 6px;
 }
 
@@ -1092,8 +1100,8 @@ header .profile a.teacher-profile img {
   border-radius: 4px;
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 @media (min-width: 768px) {
@@ -1106,35 +1114,36 @@ header .profile a.teacher-profile img {
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a i {
   position: relative;
   top: 1px;
+  color: var(--fixed-white);
 }
 
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.start {
-  background: #238636;
+  background: var(--green-clr-300);
 }
 
 @media (min-width: 768px) {
   .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.start:hover {
-    background: #49a75a;
+    background: var(--green-clr-200);
   }
 }
 
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.edit {
-  background: #df3a11;
+  background: var(--orange-clr-300);
 }
 
 @media (min-width: 768px) {
   .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.edit:hover {
-    background: #e9795d;
+    background: var(--orange-clr-200);
   }
 }
 
 .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.remove {
-  background: #cb0101;
+  background: var(--red-clr-300);
 }
 
 @media (min-width: 768px) {
   .schedule .schedule-tab .overflower .schedule-container .sessions .cell .functionalities a.remove:hover {
-    background: #ff1f1f;
+    background: var(--red-clr-200);
   }
 }
 
@@ -1159,10 +1168,10 @@ header .profile a.teacher-profile img {
   -webkit-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
   z-index: 100000;
-  background: #0d1117;
-  -webkit-box-shadow: -5px 5px 30px -10px #000;
-          box-shadow: -5px 5px 30px -10px #000;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  background: var(--blue-clr-300);
+  -webkit-box-shadow: -5px 5px 30px -10px var(--box-shadow);
+          box-shadow: -5px 5px 30px -10px var(--box-shadow);
+  border: 1px solid var(--grey-clr-200);
   width: 600px;
   max-height: 80vh;
   font-weight: bold;
@@ -1198,7 +1207,7 @@ header .profile a.teacher-profile img {
   border: none;
   cursor: pointer;
   font-size: 22px;
-  color: #fff;
+  color: var(--white);
 }
 
 .start-section hr {
@@ -1207,7 +1216,7 @@ header .profile a.teacher-profile img {
   width: 100%;
   border: none;
   margin: 10px 0;
-  background: rgba(238, 245, 252, 0.2);
+  background: var(--grey-clr-200);
 }
 
 .start-section.pop {
@@ -1237,10 +1246,10 @@ header .profile a.teacher-profile img {
   -webkit-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
   z-index: 100000;
-  background: #0d1117;
-  -webkit-box-shadow: -5px 5px 30px -10px #000;
-          box-shadow: -5px 5px 30px -10px #000;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  background: var(--blue-clr-300);
+  -webkit-box-shadow: -5px 5px 30px -10px var(--box-shadow);
+          box-shadow: -5px 5px 30px -10px var(--box-shadow);
+  border: 1px solid var(--grey-clr-200);
   width: 600px;
   max-height: 80vh;
   font-weight: bold;
@@ -1275,7 +1284,7 @@ header .profile a.teacher-profile img {
   border: none;
   cursor: pointer;
   font-size: 22px;
-  color: #fff;
+  color: var(--white);
 }
 
 .remove-section hr {
@@ -1284,7 +1293,7 @@ header .profile a.teacher-profile img {
   width: 100%;
   border: none;
   margin: 10px 0;
-  background: rgba(238, 245, 252, 0.2);
+  background: var(--grey-clr-200);
 }
 
 .remove-section.pop {
@@ -1324,8 +1333,8 @@ header .profile a.teacher-profile img {
 
 .remove-section .body .textarea-wrapper textarea {
   display: block;
-  background: #010409;
-  border: 1px solid rgba(238, 245, 252, 0.2);
+  background: var(--blue-clr-400);
+  border: 1px solid var(--grey-clr-200);
   border-radius: 6px;
   width: 100%;
   max-width: 100%;
@@ -1333,11 +1342,11 @@ header .profile a.teacher-profile img {
   min-height: 100px;
   max-height: 200px;
   padding: 1em;
-  color: #fff;
+  color: var(--white);
 }
 
 .remove-section .body .send-notification label {
-  color: #8a939e;
+  color: var(--grey-clr-100);
 }
 
 .remove-section .footer {
@@ -1355,7 +1364,7 @@ header .profile a.teacher-profile img {
 .remove-section .footer button {
   border-radius: 4px;
   border: none;
-  color: #fff;
+  color: var(--white);
   padding: .5em 1.2em;
   margin: 0 .5em;
   cursor: pointer;
@@ -1363,11 +1372,11 @@ header .profile a.teacher-profile img {
 }
 
 .remove-section .footer button.cancel {
-  background: rgba(238, 245, 252, 0.2);
+  background: var(--grey-clr-200);
 }
 
 .remove-section .footer button.remove {
-  background: #ff1f1f;
+  background: var(--red-clr-200);
 }
 
 /* End Remove Popup */

@@ -16,8 +16,8 @@
 }
 
 @mixin dark-hole($lightness) {
-    background: if($lightness == 1, $blue-clr-300, $blue-clr-400); 
-    border: 1px solid $border-color;
+    background: if($lightness == 1, var(--blue-clr-300), var(--blue-clr-400)); 
+    border: 1px solid var(--grey-clr-200);
     border-radius: $border-r-2;
 }
 
@@ -25,7 +25,7 @@
     @media (min-width: 768px) {
         &:hover {
             transition: $transition-4;
-            color: $grey-clr-100;
+            color: var(--grey-clr-100);
             transform: scale(1.05);
         }
     }
@@ -36,6 +36,7 @@
     background: $back-color; 
     border-radius: $border-r-1;
     text-align: center;
+    color: var(--fixed-white); 
 
     @media (min-width: 768px) {
         &:hover {
@@ -68,9 +69,9 @@
     left: 50%; 
     transform: translate(-50%, -50%) scale(0); 
     z-index: 100000;
-    background: $blue-clr-300;
-    box-shadow: -5px 5px 30px -10px #000;
-    border: 1px solid $grey-clr-200; 
+    background: var(--blue-clr-300);
+    box-shadow: -5px 5px 30px -10px var(--box-shadow);
+    border: 1px solid var(--grey-clr-200); 
     width: 600px;
     max-height: 80vh; 
     font-weight: bold;
@@ -95,7 +96,7 @@
         border: none; 
         cursor: pointer;
         font-size: 22px; 
-        color: $white; 
+        color: var(--white); 
     }
     hr {
         display: block;
@@ -103,7 +104,7 @@
         width: 100%; 
         border: none; 
         margin: 10px 0; 
-        background: $grey-clr-200; 
+        background: var(--grey-clr-200); 
     }
     &.pop {
         opacity: 1; 
