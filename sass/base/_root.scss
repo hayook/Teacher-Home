@@ -1,4 +1,10 @@
-
 :root {
-    
+    @each $clr-name, $clr-value in $dark {
+        --#{$clr-name}: #{$clr-value};
+    }
+}
+:root[theme="light"] {
+    @each $clr-name, $clr-value in $light {
+        --#{$clr-name}: #{$clr-value};
+    }
 }
